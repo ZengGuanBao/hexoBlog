@@ -1,3 +1,11 @@
+---
+title: Git-最简单的本地项目变成版本仓库，然后把内容推送到GitHub仓库
+tags: [Github]
+category: 技术
+---
+工具：Visual Studio Code
+技术：Github
+
 ###Git-最简单的本地项目变成版本仓库，然后把内容推送到GitHub仓库
 （注：本文的前提是本地Git仓库和github仓库之间已经存在SSH key了，所以如果没有建立联系的小伙伴们请先建立联系）
 
