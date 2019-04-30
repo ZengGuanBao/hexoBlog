@@ -1,0 +1,61 @@
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script type="text/javascript" src="//mat1.gtimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+<footer id="footer">
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <!-- <h1 class="logo-wrap">
+          <a href="<%- url_for() %>" class="logo"></a>
+        </h1> -->
+        <p>&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %></p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ZengGuanBao"
+            target="_blank">ZengGuanBao</a></p>
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        <div class="powered-by">
+          <i class="fa fa-user-md"></i>
+          <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+        </div>
+      </div>
+      <div class="footer-plugins">
+        <%- partial('plugin/scripts', { isFooter: true }) %>
+      </div>
+    </div>
+  </div>
+</footer>
+<script language="JavaScript">
+  var music = new Array();
+  $.ajax({
+    type: "GET",
+    url: 'https://api.mlwei.com/music/api/?key=523077333&id=3641614987&type=songlist&cache=1',
+    dataType: 'json',
+    success: function (result) {
+      var ap = new APlayer({
+        element: document.getElementById('aplayer'),
+        theme: '2C2C2E',
+        lrcType: 3,
+        volume: 1,
+        mutex: true,
+        autoplay: true,
+        listFolded: true,
+        storageName: 'aplayer-setting',
+        audio: result.Body
+      });
+    }
+  });
+  var now = new Date();
+  function createtime() {
+    var grt = new Date("05/14/2018 12:49:00");//此处修改你的建站时间或者网站上线时间 
+    now.setTime(now.getTime() + 250);
+    days = (now - grt) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+    if (String(hnum).length == 1) { hnum = "0" + hnum; } minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+    mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
+    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+    snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
+    document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+  }
+  setInterval("createtime()", 250);
+</script>
