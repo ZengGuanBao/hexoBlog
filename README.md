@@ -10,7 +10,7 @@
 - 生成SSH添加到GitHub
 - 将hexo部署到GitHub
 
-###安装Git
+###安装Git###
 Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的hexo博客文章，上传到GitHub的工具。Git非常强大，我觉得建议每个人都去了解一下。廖雪峰老师的Git教程写的非常好，大家可以了解一下。[Git教程](liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 windows：到git官网上下载,Download git,下载后会有一个Git Bash的命令行工具，以后就用这个工具来使用git。
@@ -21,7 +21,7 @@ linux：对linux来说实在是太简单了，因为最早的git就是在linux�
 
 安装好后，用git --version 来查看一下版本
 
-###安装nodejs
+###安装nodejs###
 
 Hexo是基于nodeJS编写的，所以需要安装一下nodeJs和里面的npm工具。
 windows：[nodejs](https://nodejs.org/en/download/)选择LTS版本就行了。
@@ -39,7 +39,7 @@ linux：
 
 顺便说一下，windows在git安装完后，就可以直接使用git bash来敲命令行了，不用自带的cmd，cmd有点难用。
 
-###安装hexo
+###安装hexo###
 前面git和nodejs安装好后，就可以安装hexo了，你可以先创建一个文件夹blog，然后cd到这个文件夹下（或者在这个文件夹下直接右键git bash打开）。
 
 输入命令
@@ -72,7 +72,7 @@ linux：
     hexo server
 打开hexo的服务，在浏览器输入localhost:4000就可以看到你生成的博客了。
 使用ctrl+c可以把服务关掉。
-###GitHub创建个人仓库
+###GitHub创建个人仓库###
 首先，你先要有一个GitHub账户，去注册一个吧。
 
 注册完登录后，在GitHub.com中看到一个New repository，新建仓库
@@ -84,7 +84,7 @@ linux：
 
 点击create repository。
 
-###生成SSH添加到GitHub
+###生成SSH添加到GitHub###
 回到你的git bash中，
 
     git config --global user.name "yourname"
@@ -107,7 +107,7 @@ ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的�
 
     ssh -T git@github.com
 
-### 将hexo部署到GitHub
+### 将hexo部署到GitHub###
 这一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件_config.yml，翻到最后，修改为YourgithubName就是你的GitHub账户
 
     deploy:
