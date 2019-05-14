@@ -228,7 +228,7 @@ ES5新增Object.create规范了原型式继承，接收两个参数，一个用�
 优点：只调用了一次supertype构造函数，因此避免在subtype.prototype上创建不必要的，多余的属性，与此同时，原型链还能保持不变，还能正常使用instanceof 和isPrototypeOf()，因此，寄生组合式继承被认为是引用类型最理想的继承范式。
 
 ES5的继承可以用下图来概括：
-![](https://i.imgur.com/4c8P5p1.png)
+![](/images/es5jichen.png)
 
 
 **ES6继承**
@@ -261,4 +261,4 @@ prototype 和__proto__
 
 总结：
 ES6的继承可以用下图来概括：
-![](https://i.imgur.com/6oig7Wg.png)​
+![](/images/es6jichen.png)
